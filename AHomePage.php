@@ -1,12 +1,14 @@
 <?php
-
-$conn = mysqli_connect($servername, $username, $password, $database); 
-
+if (isset($_GET['username'])) {
+$welcome="Welcome".$_GET['username'];
+}
+else {
+$welcome="<a href='Login.php'>Sign In</a>"; 
+} 
 ?>
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,29 +17,31 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 </head>
 <body>
 
-    <!--Secondary navigation bar-->
+    
     <div class="topnav">
-      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/HomePage.php""><bold>Bloom Burgers</bold></a>
+      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AHomePage.php""><bold>Bloom Burgers</bold></a>
       <div class="topnav-right">
-  
+       
+
       </div>
     </div>
 
     <br><br>
 
-    <!-- Main navigation bar-->
+    
   <div class="nav">
-      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/HomePage.php">HOME</a>
+      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AHomePage.php">HOME</a>
       <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/Menu.php">MENU</a>
       <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/News.php">NEWS</a>
-      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/Events.php">EVENTS</a>
-      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AboutUs.php">ABOUT US</a>
-      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/ContactUs.php">CONTACT US</a>
+      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AEvents.php">EVENTS</a>
+      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AAboutUs.php">ABOUT US</a>
+      <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AContactUs.php">CONTACT US</a>
 	  <a href="Login.php">ADMIN SIGN IN</a>
     </div>
-	 <br>
-	 <br>
-	 <br>
+      <br>
+	  <br>
+	  <br>
+      
 	<!--Intro Text -->
 	<div class = "body">
 	<h1> Welcome to Bloom Burgers </h1>
@@ -45,10 +49,11 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 	<p> Bloom Burgers is located on 403 N Walnut Street </p>
 	<p> Come by and give our burgers a chance. We ensure that you won't regret it </p>
 
-    <!-- Picture --> 
+  
     <center><img src="BurgerLogo.jpg" style="width:35%" alt="burger"></center>
 
    
+
 
 </body>
 </html>

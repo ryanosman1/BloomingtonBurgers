@@ -1,86 +1,46 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once 'vendor/autoload.php';
-  
-  
-$clientID = ' ';
-$clientSecret = ' ';
-$redirectUri = 'https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/Login.php';
-   
-
-
-$client = new Google_Client();
-$client->setClientId($clientID);
-$client->setClientSecret($clientSecret);
-$client->setRedirectUri($redirectUri);
-$client->addScope("email");
-$client->addScope("profile");
-  
-
-
-if (isset($_GET['code'])) {
-  $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-  $client->setAccessToken($token['access_token']); 
-   
- 
-  $google_oauth = new Google_Service_Oauth2($client);
-  $google_account_info = $google_oauth->userinfo->get();
-  $email =  $google_account_info->email;
-  $name =  $google_account_info->name;
-  $login= "Welcome!". $name; 
-  header("Location: HomePage.php?username=".$name); 
- 
-} else {
-  $login= "<a href='".$client->createAuthUrl()."'>Google Login</a>";
-}
-?> 
-
-
-<!DOCTYPE html>  
-<html lang="en-us">
+<html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<meta charset="UTF-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-    <link rel="stylesheet" type="text/css" href="styles.css">
-	
-    <title>Bloom Burgers</title>
+    <title>Bloom Burgers </title>
+    <meta name="google-signin-client_id" content="441437457035-dlfjrmo9q2fl4i92k0bjf3c12ghokrlh.apps.googleusercontent.com">
 </head>
+
 <body>
-    
-<center>
-    
-    <div class="signup_page">
-    <br>
-    <br>
- 
-    
 
-    <div class="signup_form">
- 
-    <h4><?= $login; ?> </h4>
+    <div class="g-signin2" 
+        data-onsuccess="onSignIn"
+        <!--data-ux_mode="redirect"
+        data-redirect_uri="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AHomePage.php"-->
+        >
+    </div>
 
-    
-    <div class ='user'></div>
-    <div class="g-signin2" data-width= '700' data-height='300' data-longtitle='true'data-theme='dark'data-onsuccess="onSignIn"></div>
-    <br>
+    <a href="#" onclick="signOut();">Sign out</a>
 
-    
-    
-    
+    <?php
+
+    var_dump($_POST);
+
+    var_dump($_GET);
+    ?>
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src='login.js'></script>
+    <script>
+        function onSignIn(googleUser) {
+            // redirect page
+            location.href = "https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/AHomePage.php"
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
 
-    </div>
-    </div>
-    </center>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
+            });
+        }
+    </script>
 </body>
-</html> 
+</html>

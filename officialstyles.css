@@ -1,0 +1,204 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;   
+  }
+  
+  .sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  .nobr {
+    white-space: nowrap;
+  }
+  
+  body {
+    background-color: red;
+  }
+
+  .body{
+    background-color: red; 
+    color: white;
+    text-align: center;
+    font-family: Arial;
+  }
+
+.topnav a {
+  float: left;
+  color: grey;
+  text-align: center;
+  padding: 16x 18x;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.nav {
+    overflow: hidden;
+    background-color: grey;
+  }
+  
+  .nav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px 18px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial;
+  }
+  
+  .nav a:hover {
+    background-color: lightgrey;
+    color: white;
+  }
+  
+  .nav a.active {
+    background-color: black;
+    color: white;
+  }
+  
+  .nav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 18px;
+  }
+
+  h1{
+      color: white;
+      text-align: center;
+  }
+
+@media (max-width: 576px) { 
+    .body{
+        padding: 5px 100px;
+      }
+  }
+  
+  @media (min-width: 576px) { 
+    .body{
+        padding: 5px 100px;
+      }
+  }
+  
+  @media (min-width: 768px) {
+    .body{
+        padding: 5px 100px;
+      }
+  }
+  
+  @media (min-width: 992px) {
+    .body{
+        padding: 5px 150px;
+      }
+  }
+  
+  @media (min-width: 1200px) {
+      .body{
+        padding: 5px 250px;
+      }
+  }
+
+  body {
+    font-family: Arial;
+    font-size: 18px;
+    padding: 8px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+  .col-25 {
+    -ms-flex: 25%; 
+    flex: 25%;
+  }
+  .col-50 {
+    -ms-flex: 50%; 
+    flex: 50%;
+  }
+  .col-75 {
+    -ms-flex: 75%; 
+    flex: 75%;
+  }
+  .col-25,.col-50, .col-75 {
+    padding: 0 16px;
+  }
+  .container {
+    background-color: red;
+    padding: 5px 20px 15px 20px;
+    border: 1px white;
+    border-radius: 3px;
+  }
+  .container2 {
+    background-color: red;
+    padding: 5px 20px 15px 20px;
+    border: 1px lightgrey;
+    border-radius: 3px;
+  }
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  .btn {
+    background-color: white;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  .btn:hover {
+    background-color: black;
+  }
+  hr {
+    border: 1px solid grey;
+  }
+  span.price {
+    float: right;
+    color: white;
+  }
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  } 

@@ -1,35 +1,33 @@
-<?php
-if (isset($_GET['username'])) {
-$welcome="Welcome".$_GET['username'];
-}
-else {
-$welcome="<a href='Login.php'>Log In</a>"; 
-}
-?>
+
 <!DOCTYPE html>  
 <html lang="en-us">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<meta charset="UTF-8">
+    
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+   
     <link rel="stylesheet" type="text/css" href="officialstyles.css">
+	
     <title>Bloom Burgers</title>
+	
 </head>
 
 <body>
 
-    
     <div class="topnav">
       <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/HomePage.php"><bold>Bloom Burgers</bold></a>
       <div class="topnav-right">
 
+       
       </div>
     </div>
 
   <br><br>
 
-  <!--NAV BAR 2-->
   <div class="nav">
       <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/HomePage.php">HOME</a>
       <a href="https://cgi.luddy.indiana.edu/~ryosman/capstonesummer/Menu.php">MENU</a>
