@@ -1,10 +1,4 @@
 <?php
-if (isset($_GET['username'])) {
-$welcome="Welcome".$_GET['username'];
-}
-else {
-$welcome="<a href='Login.php'>Log In</a>"; 
-}
 ?>
 <!DOCTYPE html>  
 <html lang="en-us">
